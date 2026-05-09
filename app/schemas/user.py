@@ -8,7 +8,6 @@ class UserBase(BaseModel):
 	model_config = ConfigDict(from_attributes=True)
 
 	email: str
-	password_hash: str
 	google_id: str | None = None
 	name: str
 	role: str
@@ -17,7 +16,7 @@ class UserBase(BaseModel):
 
 
 class UserCreate(UserBase):
-	pass
+	password: str
 
 
 class UserRead(UserBase):
